@@ -1,0 +1,34 @@
+local tool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+tool.Name = "DestroyTool"
+tool.CanBeDropped = false
+tool.RequiresHandle = false
+
+local equipped = false
+local Mouse = game.Players.LocalPlayer:GetMouse()
+
+local box = Instance.new("SelectionBox", game.StarterGui)
+box.Adornee = nil
+box.Color3 = Color3.fromRGB(255, 255, 255)
+box.SurfaceColor3 = Color3.fromRGB(255, 255, 255)
+box.LineThickness = 0.1
+
+Mouse.Button1Down:Connect(function()
+	if equipped == true then
+		Mouse.Target:Destroy()
+	end
+end)
+
+tool.Equipped:Connect(function()
+	equipped = true
+	box.Parent = game.Workspace
+	while equipped == true do
+		wait(0.1)
+		box.Adornee = Mouse.Target
+	end
+end)
+
+tool.Unequipped:Connect(function()
+	equipped = false
+	box.Adornee = nil
+	box.Parent = game.StarterGui
+end)

@@ -1,0 +1,80 @@
+local equipped = false
+local Mouse = game.Players.LocalPlayer:GetMouse()
+
+local box = Instance.new("SelectionBox", game.StarterGui)
+box.Adornee = nil
+box.Color3 = Color3.fromRGB(255, 255, 255)
+box.SurfaceColor3 = Color3.fromRGB(255, 255, 255)
+box.LineThickness = 0.1
+
+-- Instances:
+
+local DestroyUI = Instance.new("ScreenGui")
+local Main = Instance.new("TextButton")
+local Check = Instance.new("BoolValue")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+--Properties:
+
+DestroyUI.Name = "DestroyUI"
+DestroyUI.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = DestroyUI
+Main.AnchorPoint = Vector2.new(1, 0)
+Main.BackgroundColor3 = Color3.fromRGB(255,255,255)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(1, 0, 0, 0)
+Main.Size = UDim2.new(0.150000006, 0, 0.0500000007, 0)
+Main.AutoButtonColor = false
+Main.Font = Enum.Font.SourceSansLight
+Main.Text = "Destroy"
+Main.TextColor3 = Color3.fromRGB(255, 0, 0)
+Main.TextScaled = true
+Main.TextSize = 14
+Main.TextWrapped = true
+
+Check.Parent = DestroyUI
+Check.Value = false
+
+UITextSizeConstraint.Parent = Main
+UITextSizeConstraint.MaxTextSize = 40
+
+UIAspectRatioConstraint.Parent = Main
+UIAspectRatioConstraint.AspectRatio = 3.9268293380737
+
+-- Scripts
+
+local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out)
+
+local tweenToGreen = {TextColor3 = Color3.fromRGB(0, 255, 127)}
+local tweenToRed = {TextColor3 = Color3.fromRGB(255, 0, 0)}
+
+local AnimationGreen = game:GetService("TweenService"):Create(Main, tweenInfo, tweenToGreen)
+local AnimationRed = game:GetService("TweenService"):Create(Main, tweenInfo, tweenToRed)
+
+Main.MouseButton1Down:Connect(function()
+	if Check.Value == false then
+		Check.Value = true
+		AnimationGreen:Play()
+		equipped = true
+		box.Parent = game.Workspace
+		while equipped == true do
+			wait(0.1)
+			box.Adornee = Mouse.Target
+		end
+	else
+		Check.Value = false
+		AnimationRed:Play()
+		equipped = false
+		box.Adornee = nil
+		box.Parent = game.StarterGui
+	end
+end)
+
+Mouse.Button1Down:Connect(function()
+	if equipped == true then
+		Mouse.Target:Destroy()
+	end
+end)
