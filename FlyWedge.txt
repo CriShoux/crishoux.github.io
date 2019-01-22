@@ -31,7 +31,7 @@ while true do
         local newPart = Instance.new("WedgePart", workspace)
         newPart.Name = "destroyPartnilafesf94"
         newPart.Transparency = 1
-        newPart.CFrame = game.Players.LocalPlayer:FindFirstChild("Character"):FindFirstChild("HumanoidRootPart").CFrame
+        newPart.CFrame = game.Players.LocalPlayer:WaitForChild("Character"):WaitForChild("HumanoidRootPart").CFrame
         if checkVal.Value == false then
             break
         end
