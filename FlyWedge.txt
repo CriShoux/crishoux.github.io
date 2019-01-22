@@ -1,0 +1,40 @@
+_G.toggleKey = "e" -- key to press to turn on or off fly mode
+
+local checkVal = Instance.new("BoolValue", game.CoreGui)
+checkVal.Value = false
+checkVal.Name = "eliteValuefieh7f4psnd"
+
+game.Workspace.ChildAdded:Connect(function(value)
+    wait(1)
+    if value:IsA("WedgePart") then
+        if value.Name == "destroyPartnilafesf94" then
+            value:Destroy()
+        end
+    end
+end)
+
+wait()
+
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(keyDowna)
+    if keyDowna == _G.toggleKey then
+        if checkVal.Value == false then
+            checkVal.Value = true
+        elseif checkVal.Value == true then
+            checkVal.Value = false
+        end
+    end
+end)
+
+
+while true do
+    if checkVal.Value == true then
+        local newPart = Instance.new("WedgePart", workspace)
+        newPart.Name = "destroyPartnilafesf94"
+        newPart.Transparency = 1
+        newPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        if checkVal.Value == false then
+            break
+        end
+    end
+    wait()
+end
