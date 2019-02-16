@@ -4,7 +4,7 @@ local checkVal = Instance.new("BoolValue", game.CoreGui)
 checkVal.Value = false
 checkVal.Name = "eliteValuefieh7f4psnd"
 
-game.Workspace.ChildAdded:Connect(function(value)
+game:GetService("Workspace").ChildAdded:Connect(function(value)
     wait(1)
     if value:IsA("WedgePart") then
         if value.Name == "destroyPartnilafesf94" then
@@ -15,7 +15,7 @@ end)
 
 wait()
 
-game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(keyDowna)
+game:GetService("Players").LocalPlayer:GetMouse().KeyDown:Connect(function(keyDowna)
     if keyDowna == _G.toggleKey then
         if checkVal.Value == false then
             checkVal.Value = true
@@ -28,10 +28,10 @@ end)
 
 while true do
     if checkVal.Value == true then
-        local newPart = Instance.new("WedgePart", workspace)
+        local newPart = Instance.new("WedgePart", game:GetService("Workspace"))
         newPart.Name = "destroyPartnilafesf94"
         newPart.Transparency = 1
-        newPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        newPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
         if checkVal.Value == false then
             break
         end
