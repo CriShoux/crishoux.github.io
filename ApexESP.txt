@@ -1,0 +1,441 @@
+--// Press "p" to toggle the GUI visibility.
+
+math.randomseed(tick())
+
+local function ApexInitiate()
+	local enableStatus = false
+	local loadingScreen = Instance.new("ScreenGui")
+	local Main = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local playerLabel = Instance.new("TextLabel")
+	local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+	local blurEffect = Instance.new("BlurEffect")
+	local soundEffect = Instance.new("Sound")
+
+	soundEffect.Name = math.random(1, 385)
+	soundEffect.Parent = game:GetService("Workspace")
+	soundEffect.Volume = 3
+	soundEffect.SoundId = "rbxassetid://858508159"
+
+	blurEffect.Name = math.random(1, 385)
+	blurEffect.Parent = game:GetService("Lighting")
+	blurEffect.Size = 20
+
+	loadingScreen.Name = math.random(1, 385)
+	loadingScreen.Parent = game.CoreGui
+	loadingScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Main.Name = math.random(1, 385)
+	Main.Parent = loadingScreen
+	Main.AnchorPoint = Vector2.new(0.5, 0.5)
+	Main.BackgroundColor3 = Color3.new(1, 1, 1)
+	Main.BackgroundTransparency = 1
+	Main.BorderSizePixel = 0
+	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Main.Size = UDim2.new(0.5, 0, 0.5, 0)
+	Main.Image = "rbxassetid://2863972698"
+	Main.ImageTransparency = 1
+	Main.ScaleType = Enum.ScaleType.Crop
+
+	UIAspectRatioConstraint.Parent = Main
+	UIAspectRatioConstraint.AspectRatio = 1.2751842737198
+
+	playerLabel.Name = math.random(1, 385)
+	playerLabel.Parent = loadingScreen
+	playerLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+	playerLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+	playerLabel.BackgroundTransparency = 1
+	playerLabel.BorderSizePixel = 0
+	playerLabel.Position = UDim2.new(0.5, 0, 0.565, 0)
+	playerLabel.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+	playerLabel.Font = Enum.Font.SourceSansLight
+	playerLabel.Text = "Welcome to Apex, " .. game:GetService("Players").LocalPlayer.Name
+	playerLabel.TextColor3 = Color3.new(1, 1, 1)
+	playerLabel.TextScaled = true
+	playerLabel.TextSize = 14
+	playerLabel.TextTransparency = 1
+	playerLabel.TextWrapped = true
+
+	UIAspectRatioConstraint_2.Parent = playerLabel
+	UIAspectRatioConstraint_2.AspectRatio = 7.6511058807373
+
+	soundEffect:Play()
+
+	wait(0.3)
+
+
+	for i = 1, 10 do
+		Main.ImageTransparency = Main.ImageTransparency - 0.1
+		wait()
+	end
+
+	for i = 1, 10 do
+		playerLabel.TextTransparency = playerLabel.TextTransparency - 0.1
+		wait()
+	end
+
+	wait(2)
+
+	for i = 1, 10 do
+		Main.ImageTransparency = Main.ImageTransparency + 0.1
+		wait()
+	end
+
+	for i = 1, 10 do
+		playerLabel.TextTransparency = playerLabel.TextTransparency + 0.1
+		wait()
+	end
+
+	blurEffect:Destroy()
+	soundEffect:Destroy()
+	loadingScreen:Destroy()
+
+	wait(0.4)
+
+	local _1337 = Instance.new("ScreenGui")
+	local Main = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local windowFocusFrame = Instance.new("Frame")
+
+	_1337.Name = math.random(1, 385)
+	_1337.Parent = game.CoreGui
+	_1337.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Main.Name = math.random(1, 500)
+	Main.Parent = _1337
+	Main.AnchorPoint = Vector2.new(1, 1)
+	Main.BackgroundColor3 = Color3.new(1, 1, 1)
+	Main.BackgroundTransparency = 1
+	Main.BorderSizePixel = 0
+	Main.Position = UDim2.new(0.997, 0, 1.12, 0)
+	Main.Size = UDim2.new(0.200000003, 0, 0.0500000007, 0)
+	Main.Image = "rbxassetid://2863972698"
+	Main.ImageTransparency = 1
+	Main.ScaleType = Enum.ScaleType.Crop
+
+	windowFocusFrame.Name = math.random(1, 385)
+	windowFocusFrame.Parent = _1337
+	windowFocusFrame.Size = UDim2.new(1,0,1,0)
+	windowFocusFrame.BorderSizePixel = 0
+	windowFocusFrame.BackgroundTransparency = 0.5
+	windowFocusFrame.BackgroundColor3 = Color3.fromRGB(35,35,35)
+	windowFocusFrame.Visible = false
+
+	UIAspectRatioConstraint.Parent = Main
+	UIAspectRatioConstraint.AspectRatio = 5.1007370948792
+
+	spawn(function()
+		Main:TweenPosition(UDim2.new(0.997, 0, 1, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.6)
+		wait(0.25)
+		for i = 1, 10 do
+			Main.ImageTransparency = Main.ImageTransparency - 0.1
+			wait()
+		end
+	end)
+
+	local espMenu = Instance.new("ScreenGui")
+	local mainFrame = Instance.new("Frame")
+	local titleLabel = Instance.new("TextLabel")
+	local bodyFrame = Instance.new("Frame")
+	local toggleBtn = Instance.new("TextButton")
+	local refreshBtn = Instance.new("TextButton")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+
+	espMenu.Name = math.random(1, 385)
+	espMenu.Parent = game.CoreGui
+	espMenu.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	mainFrame.Name = math.random(1, 385)
+	mainFrame.Parent = espMenu
+	mainFrame.Active = true
+	mainFrame.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+	mainFrame.BackgroundTransparency = 1
+	mainFrame.BorderSizePixel = 0
+	mainFrame.Position = UDim2.new(0.100000001, 0, 0.699999988, 0)
+	mainFrame.Size = UDim2.new(0.300000012, 0, 0.0399999991, 0)
+	mainFrame.Draggable = true
+
+	titleLabel.Name = math.random(1, 385)
+	titleLabel.Parent = mainFrame
+	titleLabel.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+	titleLabel.BackgroundTransparency = 1
+	titleLabel.BorderSizePixel = 0
+	titleLabel.Size = UDim2.new(1, 0, 1, 0)
+	titleLabel.Font = Enum.Font.SourceSansLight
+	titleLabel.Text = "Apex ESP"
+	titleLabel.TextColor3 = Color3.new(1, 1, 1)
+	titleLabel.TextScaled = true
+	titleLabel.TextSize = 14
+	titleLabel.TextWrapped = true
+
+	bodyFrame.Name = math.random(1, 385)
+	bodyFrame.Parent = mainFrame
+	bodyFrame.BackgroundColor3 = Color3.new(0.176471, 0.176471, 0.176471)
+	bodyFrame.BackgroundTransparency = 1
+	bodyFrame.BorderSizePixel = 0
+	bodyFrame.Position = UDim2.new(0, 0, 1, 0)
+	bodyFrame.Size = UDim2.new(1, 0, 4, 0)
+
+	toggleBtn.Name = math.random(1, 385)
+	toggleBtn.Parent = bodyFrame
+	toggleBtn.AnchorPoint = Vector2.new(0.5, 0.5)
+	toggleBtn.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	toggleBtn.BorderSizePixel = 0
+	toggleBtn.ClipsDescendants = true
+	toggleBtn.Position = UDim2.new(0.5, 0, 0.349999994, 0)
+	toggleBtn.Size = UDim2.new(0.899999976, 0, 0.5, 0)
+	toggleBtn.AutoButtonColor = false
+	toggleBtn.Font = Enum.Font.SourceSansLight
+	toggleBtn.Text = "Enable"
+	toggleBtn.TextColor3 = Color3.new(1, 1, 1)
+	toggleBtn.TextScaled = true
+	toggleBtn.TextSize = 14
+	toggleBtn.TextWrapped = true
+
+	refreshBtn.Name = math.random(1, 385)
+	refreshBtn.Parent = bodyFrame
+	refreshBtn.AnchorPoint = Vector2.new(0.5, 0.5)
+	refreshBtn.BackgroundColor3 = Color3.new(0.215686, 0.215686, 0.215686)
+	refreshBtn.BorderSizePixel = 0
+	refreshBtn.ClipsDescendants = true
+	refreshBtn.Position = UDim2.new(0.5, 0, 0.800000012, 0)
+	refreshBtn.Size = UDim2.new(0.899999976, 0, 0.200000003, 0)
+	refreshBtn.AutoButtonColor = false
+	refreshBtn.Font = Enum.Font.SourceSansLight
+	refreshBtn.Text = "Refresh ESP (ESP Needs To Be Enabled)"
+	refreshBtn.TextColor3 = Color3.new(1, 1, 1)
+	refreshBtn.TextScaled = true
+	refreshBtn.TextSize = 14
+	refreshBtn.TextWrapped = true
+
+	UIAspectRatioConstraint.Parent = bodyFrame
+	UIAspectRatioConstraint.AspectRatio = 2.3655424118042
+
+	UIAspectRatioConstraint_2.Parent = mainFrame
+	UIAspectRatioConstraint_2.AspectRatio = 9.4478158950806
+
+	spawn(function()
+		for i = 1, 10 do
+			mainFrame.BackgroundTransparency = mainFrame.BackgroundTransparency - 0.1
+			bodyFrame.BackgroundTransparency = bodyFrame.BackgroundTransparency - 0.1
+			wait()
+		end
+	end)
+
+	local buttonColor = game:GetService("TweenService"):Create(toggleBtn, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(70,70,70)})
+	local buttonColorReturn = game:GetService("TweenService"):Create(toggleBtn, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(55,55,55)})
+
+	local buttonColor2 = game:GetService("TweenService"):Create(refreshBtn, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(70,70,70)})
+	local buttonColorReturn2 = game:GetService("TweenService"):Create(refreshBtn, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(55,55,55)})
+
+	local function mainESP(humRootPart, plr)
+		if tostring(plr.Team) == tostring(game:GetService("Players").LocalPlayer.Team) then
+			local Holder = Instance.new("BillboardGui", humRootPart)
+			Holder.Name = math.random(1, 500)
+			Holder.LightInfluence = 0
+			Holder.Adornee = humRootPart
+			Holder.AlwaysOnTop = true
+			Holder.Size = UDim2.new(1,0,1,0)
+			local mainFrame = Instance.new("Frame", Holder)
+			mainFrame.Name = math.random(1, 500)
+			mainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+			mainFrame.Position = UDim2.new(0.5,0,0.5,0)
+			mainFrame.Size = UDim2.new(4, 0,6.5, 0)
+			mainFrame.BackgroundColor3 = Color3.fromRGB(0,220,0)
+			mainFrame.BorderSizePixel = 2
+			mainFrame.BorderColor3 = Color3.fromRGB(0, 255, 0)
+			mainFrame.BackgroundTransparency = 0.5
+			local Holder2 = Instance.new("BillboardGui", humRootPart)
+			Holder2.Name = math.random(1, 500)
+			Holder2.LightInfluence = 0
+			Holder2.Adornee = humRootPart
+			Holder2.AlwaysOnTop = true
+			Holder2.Size = UDim2.new(1,0,1,0)
+			Holder2.SizeOffset = Vector2.new(0, 4)
+			local nameFrame = Instance.new("TextLabel", Holder2)
+			nameFrame.Name = math.random(1, 500)
+			nameFrame.Text = plr.Name
+			nameFrame.TextScaled = true
+			nameFrame.TextWrapped = true
+			nameFrame.TextColor3 = Color3.fromRGB(0,255,0)
+			nameFrame.Font = Enum.Font.SourceSansItalic
+			nameFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+			nameFrame.Position = UDim2.new(0.5,0,0.5,0)
+			nameFrame.Size = UDim2.new(4, 0,5.9, 0)
+			nameFrame.BackgroundColor3 = Color3.fromRGB(35,35,35)
+			nameFrame.BorderSizePixel = 0
+			nameFrame.BackgroundTransparency = 1
+		elseif tostring(plr.Team) ~= tostring(game:GetService("Players").LocalPlayer.Team) then
+			local Holder = Instance.new("BillboardGui", humRootPart)
+			Holder.Name = math.random(1, 500)
+			Holder.LightInfluence = 0
+			Holder.Adornee = humRootPart
+			Holder.AlwaysOnTop = true
+			Holder.Size = UDim2.new(1,0,1,0)
+			local mainFrame = Instance.new("Frame", Holder)
+			mainFrame.Name = math.random(1, 500)
+			mainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+			mainFrame.Position = UDim2.new(0.5,0,0.5,0)
+			mainFrame.Size = UDim2.new(4, 0,6.5, 0)
+			mainFrame.BackgroundColor3 = Color3.fromRGB(220,0,0)
+			mainFrame.BorderSizePixel = 2
+			mainFrame.BorderColor3 = Color3.fromRGB(255, 0, 0)
+			mainFrame.BackgroundTransparency = 0.5
+			local Holder2 = Instance.new("BillboardGui", humRootPart)
+			Holder2.Name = math.random(1, 500)
+			Holder2.LightInfluence = 0
+			Holder2.Adornee = humRootPart
+			Holder2.AlwaysOnTop = true
+			Holder2.Size = UDim2.new(1,0,1,0)
+			Holder2.SizeOffset = Vector2.new(0, 4)
+			local nameFrame = Instance.new("TextLabel", Holder2)
+			nameFrame.Name = math.random(1, 500)
+			nameFrame.Text = plr.Name
+			nameFrame.TextScaled = true
+			nameFrame.TextWrapped = true
+			nameFrame.TextColor3 = Color3.fromRGB(255,0,0)
+			nameFrame.Font = Enum.Font.SourceSansItalic
+			nameFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+			nameFrame.Position = UDim2.new(0.5,0,0.5,0)
+			nameFrame.Size = UDim2.new(4, 0,5.9, 0)
+			nameFrame.BackgroundColor3 = Color3.fromRGB(35,35,35)
+			nameFrame.BorderSizePixel = 0
+			nameFrame.BackgroundTransparency = 1
+		end
+	end
+
+	toggleBtn.MouseEnter:Connect(function()
+		buttonColorReturn:Cancel()
+		buttonColor:Play()
+	end)
+
+	toggleBtn.MouseLeave:Connect(function()
+		buttonColor:Cancel()
+		buttonColorReturn:Play()
+	end)
+
+	toggleBtn.MouseButton1Down:Connect(function()
+		spawn(function()
+			local effect = Instance.new("ImageLabel", toggleBtn)
+			effect.Name = "effect"
+			effect.ScaleType = Enum.ScaleType.Fit
+			effect.Image = "rbxassetid://2708891598"
+			effect.ImageColor3 = Color3.fromRGB(35,35,35)
+			effect.Size = UDim2.new(0,0,0,0)
+			effect.AnchorPoint = Vector2.new(0.5, 0.5)
+			effect.Position = UDim2.new(0.5,0,0.5,0)
+			effect.BorderSizePixel = 0
+			effect.BackgroundTransparency = 1
+			effect.ImageTransparency = 0.5
+			effect.BackgroundColor3 = Color3.fromRGB(25,25,25)
+			effect:TweenSize(UDim2.new(6,0,6,0), "Out", "Linear", 0.25)
+			wait(0.35)
+			effect:Destroy()
+		end)
+		if enableStatus == false then
+			enableStatus = true
+			for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+				if v.Name ~= game:GetService("Players").LocalPlayer.Name then
+					mainESP(v.Character.HumanoidRootPart, v)
+                    wait()
+				end
+			end
+			toggleBtn.Text = "Disable"
+		elseif enableStatus == true then
+			enableStatus = false
+			for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+				if v.Name ~= game:GetService("Players").LocalPlayer.Name then
+					for a, b in pairs(v.Character.HumanoidRootPart:GetChildren()) do
+						if b:IsA("BillboardGui") then
+							b:Destroy()
+						end
+					end
+				end
+			end
+			toggleBtn.Text = "Enable"
+		end
+	end)
+
+	refreshBtn.MouseEnter:Connect(function()
+		buttonColorReturn2:Cancel()
+		buttonColor2:Play()
+	end)
+
+	refreshBtn.MouseLeave:Connect(function()
+		buttonColor2:Cancel()
+		buttonColorReturn2:Play()
+	end)
+
+	refreshBtn.MouseButton1Down:Connect(function()
+		spawn(function()
+			local effect = Instance.new("ImageLabel", refreshBtn)
+			effect.Name = "effect"
+			effect.ScaleType = Enum.ScaleType.Fit
+			effect.Image = "rbxassetid://2708891598"
+			effect.ImageColor3 = Color3.fromRGB(35,35,35)
+			effect.Size = UDim2.new(0,0,0,0)
+			effect.AnchorPoint = Vector2.new(0.5, 0.5)
+			effect.Position = UDim2.new(0.5,0,0.5,0)
+			effect.BorderSizePixel = 0
+			effect.BackgroundTransparency = 1
+			effect.ImageTransparency = 0.5
+			effect.BackgroundColor3 = Color3.fromRGB(25,25,25)
+			effect:TweenSize(UDim2.new(14,0,14,0), "Out", "Linear", 0.19)
+			wait(0.35)
+			effect:Destroy()
+		end)
+		if enableStatus == true then
+			toggleBtn.Visible = false
+			for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+				if v.Name ~= game:GetService("Players").LocalPlayer.Name then
+					for a, b in pairs(v.Character.HumanoidRootPart:GetChildren()) do
+						if b:IsA("BillboardGui") then
+							b:Destroy()
+						end
+					end
+					wait()
+					mainESP(v.Character.HumanoidRootPart, v)
+				end
+			end
+			wait(0.5)
+			toggleBtn.Visible = true
+		end
+	end)
+
+	for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+		if v.Name ~= game:GetService("Players").LocalPlayer.Name then
+			v.CharacterAdded:Connect(function(char)
+				if enableStatus == true then
+					repeat wait() until char.HumanoidRootPart
+					mainESP(char.HumanoidRootPart, v)
+				end
+			end)
+		end
+	end
+
+	game:GetService("Players").PlayerAdded:Connect(function(plr)
+		plr.CharacterAdded:Connect(function(char)
+			if enableStatus == true then
+				if plr.Name ~= game:GetService("Players").LocalPlayer.Name then
+					repeat wait() until char.HumanoidRootPart
+					mainESP(char.HumanoidRootPart, plr)
+				end
+			end
+		end)
+	end)
+
+	game:GetService("Players").LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+		if string.lower(key) == "p" then
+			if espMenu.Enabled == true then
+				espMenu.Enabled = false
+			elseif espMenu.Enabled == false then
+				espMenu.Enabled = true
+			end
+		end
+	end)
+	
+	warn("APEX ESP LOADED")
+end
+
+ApexInitiate()
