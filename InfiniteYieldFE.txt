@@ -1,4 +1,4 @@
-ver = '1.9.2'
+ver = '2.2'
 
 repeat wait() until game:FindFirstChildOfClass("Players")
 Players = game:GetService("Players")
@@ -21,7 +21,7 @@ local Button = Instance.new("Frame")
 local On = Instance.new("TextButton")
 local Positions = Instance.new("TextLabel")
 local Select_8 = Instance.new("TextButton")
-local Color = Instance.new("TextLabel")
+local SpawnC = Instance.new("TextLabel")
 local Select_2 = Instance.new("TextButton")
 local Plugins = Instance.new("TextLabel")
 local Select_9 = Instance.new("TextButton")
@@ -36,6 +36,9 @@ local Logo = Instance.new("ImageLabel")
 local Credits = Instance.new("TextBox")
 local KeybindsFrame = Instance.new("Frame")
 local Close = Instance.new("TextButton")
+local SpawnCFrame = Instance.new("Frame")
+local Holder_6 = Instance.new("ScrollingFrame")
+local Close_5 = Instance.new("TextButton")
 local Add = Instance.new("TextButton")
 local Delete = Instance.new("TextButton")
 local Holder_2 = Instance.new("ScrollingFrame")
@@ -58,10 +61,24 @@ local Float = Instance.new("TextLabel")
 local Select_5 = Instance.new("TextButton")
 local ClickTP = Instance.new("TextLabel")
 local Select_6 = Instance.new("TextButton")
+local Xray = Instance.new("TextLabel")
+local Select_10 = Instance.new("TextButton")
 local Dark_7 = Instance.new("Frame")
 local shadow_2 = Instance.new("Frame")
 local PopupText_2 = Instance.new("TextLabel")
 local Exit_2 = Instance.new("ImageButton")
+local SpawnCEditor = Instance.new("Frame")
+local background_4 = Instance.new("Frame")
+local Cmdbar_3 = Instance.new("TextBox")
+local Dark_10 = Instance.new("Frame")
+local Add_5 = Instance.new("TextButton")
+local DelayNum = Instance.new("TextBox")
+local Delay = Instance.new("TextLabel")
+local Directions_3 = Instance.new("TextLabel")
+local Dark_11 = Instance.new("Frame")
+local shadow_4 = Instance.new("Frame")
+local PopupText_4 = Instance.new("TextLabel")
+local Exit_4 = Instance.new("ImageButton")
 local PositionsFrame = Instance.new("Frame")
 local Close_3 = Instance.new("TextButton")
 local Delete_5 = Instance.new("TextButton")
@@ -81,6 +98,8 @@ local Aliases = Instance.new("TextLabel")
 local Select_7 = Instance.new("TextButton")
 local PluginsFrame = Instance.new("Frame")
 local Close_4 = Instance.new("TextButton")
+local Add_4 = Instance.new("TextButton")
+local Delete_8 = Instance.new("TextButton")
 local Add_3 = Instance.new("TextButton")
 local Holder_5 = Instance.new("ScrollingFrame")
 local Example_5 = Instance.new("Frame")
@@ -108,6 +127,9 @@ local background = Instance.new("Frame")
 local Dark_6 = Instance.new("Frame")
 local Clear = Instance.new("TextButton")
 local Toggle = Instance.new("TextButton")
+local AliasHint = Instance.new("TextLabel")
+local PluginsHint = Instance.new("TextLabel")
+local PositionsHint = Instance.new("TextLabel")
 
 local PARENT
 if game:GetService("CoreGui"):FindFirstChild('RobloxGui') then
@@ -334,28 +356,28 @@ Select_8.FontSize = Enum.FontSize.Size14
 Select_8.Text = "Edit / TP"
 Select_8.TextColor3 = Color3.new(0, 0, 0)
 
-Color.Name = "Color"
-Color.Parent = Settings
-Color.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
-Color.BackgroundTransparency = 0.5
-Color.BorderSizePixel = 0
-Color.Position = UDim2.new(0, 0, 0, 155)
-Color.Size = UDim2.new(0, 250, 0, 20)
-Color.Font = Enum.Font.SourceSans
-Color.FontSize = Enum.FontSize.Size14
-Color.Text = "    UI Color"
-Color.TextColor3 = Color3.new(1, 1, 1)
-Color.TextXAlignment = Enum.TextXAlignment.Left
+SpawnC.Name = "SpawnC"
+SpawnC.Parent = Settings
+SpawnC.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
+SpawnC.BackgroundTransparency = 0.5
+SpawnC.BorderSizePixel = 0
+SpawnC.Position = UDim2.new(0, 0, 0, 155)
+SpawnC.Size = UDim2.new(0, 250, 0, 20)
+SpawnC.Font = Enum.Font.SourceSans
+SpawnC.FontSize = Enum.FontSize.Size14
+SpawnC.Text = "    Spawn Commands"
+SpawnC.TextColor3 = Color3.new(1, 1, 1)
+SpawnC.TextXAlignment = Enum.TextXAlignment.Left
 
 Select_2.Name = "Select"
-Select_2.Parent = Color
+Select_2.Parent = SpawnC
 Select_2.BackgroundColor3 = Color3.new(0.439216, 0.439216, 0.439216)
 Select_2.BorderSizePixel = 0
 Select_2.Position = UDim2.new(0, 200, 0, 0)
 Select_2.Size = UDim2.new(0, 50, 0, 20)
 Select_2.Font = Enum.Font.SourceSans
 Select_2.FontSize = Enum.FontSize.Size14
-Select_2.Text = "Change"
+Select_2.Text = "Edit"
 Select_2.TextColor3 = Color3.new(0, 0, 0)
 
 Plugins.Name = "Plugins"
@@ -521,6 +543,61 @@ Delete.FontSize = Enum.FontSize.Size14
 Delete.Text = "Clear"
 Delete.TextColor3 = Color3.new(0, 0, 0)
 
+SpawnCFrame.Name = "SpawnCFrame"
+SpawnCFrame.Parent = Settings
+SpawnCFrame.Active = true
+SpawnCFrame.BackgroundColor3 = Color3.new(0.121569, 0.121569, 0.121569)
+SpawnCFrame.BorderSizePixel = 0
+SpawnCFrame.Position = UDim2.new(0, 0, 0, 175)
+SpawnCFrame.Size = UDim2.new(0, 250, 0, 175)
+
+Holder_6.Name = "Holder"
+Holder_6.Parent = SpawnCFrame
+Holder_6.BackgroundColor3 = Color3.new(0.121569, 0.121569, 0.121569)
+Holder_6.BackgroundTransparency = 1
+Holder_6.BorderSizePixel = 0
+Holder_6.Position = UDim2.new(0, 0, 0, 0)
+Holder_6.Selectable = false
+Holder_6.Size = UDim2.new(0, 250, 0, 145)
+Holder_6.BottomImage = "rbxasset://textures/blackBkg_square.png"
+Holder_6.CanvasSize = UDim2.new(0, 0, 0, 0)
+Holder_6.MidImage = "rbxasset://textures/blackBkg_square.png"
+Holder_6.ScrollBarThickness = 8
+Holder_6.TopImage = "rbxasset://textures/blackBkg_square.png"
+
+Close_5.Name = "Close"
+Close_5.Parent = SpawnCFrame
+Close_5.BackgroundColor3 = Color3.new(0.439216, 0.439216, 0.439216)
+Close_5.BorderSizePixel = 0
+Close_5.Position = UDim2.new(0, 205, 0, 150)
+Close_5.Size = UDim2.new(0, 40, 0, 20)
+Close_5.Font = Enum.Font.SourceSans
+Close_5.FontSize = Enum.FontSize.Size14
+Close_5.Text = "Close"
+Close_5.TextColor3 = Color3.new(0, 0, 0)
+
+Add_4.Name = "Add"
+Add_4.Parent = SpawnCFrame
+Add_4.BackgroundColor3 = Color3.new(0.439216, 0.439216, 0.439216)
+Add_4.BorderSizePixel = 0
+Add_4.Position = UDim2.new(0, 5, 0, 150)
+Add_4.Size = UDim2.new(0, 40, 0, 20)
+Add_4.Font = Enum.Font.SourceSans
+Add_4.FontSize = Enum.FontSize.Size14
+Add_4.Text = "Add"
+Add_4.TextColor3 = Color3.new(0, 0, 0)
+
+Delete_8.Name = "Delete"
+Delete_8.Parent = SpawnCFrame
+Delete_8.BackgroundColor3 = Color3.new(0.439216, 0.439216, 0.439216)
+Delete_8.BorderSizePixel = 0
+Delete_8.Position = UDim2.new(0, 50, 0, 150)
+Delete_8.Size = UDim2.new(0, 40, 0, 20)
+Delete_8.Font = Enum.Font.SourceSans
+Delete_8.FontSize = Enum.FontSize.Size14
+Delete_8.Text = "Clear"
+Delete_8.TextColor3 = Color3.new(0, 0, 0)
+
 Holder_2.Name = "Holder"
 Holder_2.Parent = KeybindsFrame
 Holder_2.BackgroundColor3 = Color3.new(0.121569, 0.121569, 0.121569)
@@ -580,7 +657,7 @@ background_2.Parent = KeybindEditor
 background_2.BackgroundColor3 = Color3.new(0.121569, 0.121569, 0.121569)
 background_2.BorderSizePixel = 0
 background_2.Position = UDim2.new(0, 0, 0, 20)
-background_2.Size = UDim2.new(0, 360, 0, 160)
+background_2.Size = UDim2.new(0, 360, 0, 185)
 
 Dark_4.Name = "Dark"
 Dark_4.Parent = background_2
@@ -589,7 +666,7 @@ Dark_4.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
 Dark_4.BackgroundTransparency = 0.5
 Dark_4.BorderSizePixel = 0
 Dark_4.Position = UDim2.new(0, 135, 0, 5)
-Dark_4.Size = UDim2.new(0, 5, 0, 155)
+Dark_4.Size = UDim2.new(0, 5, 0, 180)
 
 Directions.Name = "Directions"
 Directions.Parent = background_2
@@ -612,7 +689,7 @@ BindTo.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
 BindTo.BackgroundTransparency = 0.5
 BindTo.BorderSizePixel = 0
 BindTo.Position = UDim2.new(0, 10, 0, 95)
-BindTo.Size = UDim2.new(0, 115, 0, 50)
+BindTo.Size = UDim2.new(0, 115, 0, 75)
 BindTo.Font = Enum.Font.SourceSans
 BindTo.FontSize = Enum.FontSize.Size18
 BindTo.Text = "Click to bind"
@@ -653,7 +730,7 @@ Toggles.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
 Toggles.BackgroundTransparency = 1
 Toggles.BorderSizePixel = 0
 Toggles.Position = UDim2.new(0, 150, 0, 50)
-Toggles.Size = UDim2.new(0, 200, 0, 100)
+Toggles.Size = UDim2.new(0, 200, 0, 120)
 Toggles.BottomImage = "rbxasset://textures/blackBkg_square.png"
 Toggles.CanvasSize = UDim2.new(0, 0, 0, 0)
 Toggles.MidImage = "rbxasset://textures/blackBkg_square.png"
@@ -755,6 +832,30 @@ Select_6.FontSize = Enum.FontSize.Size14
 Select_6.Text = "Add"
 Select_6.TextColor3 = Color3.new(0, 0, 0)
 
+Xray.Name = "Xray"
+Xray.Parent = Toggles
+Xray.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
+Xray.BackgroundTransparency = 0.5
+Xray.BorderSizePixel = 0
+Xray.Position = UDim2.new(0, 0, 0, 100)
+Xray.Size = UDim2.new(0, 200, 0, 20)
+Xray.Font = Enum.Font.SourceSans
+Xray.FontSize = Enum.FontSize.Size14
+Xray.Text = "    Toggle Xray"
+Xray.TextColor3 = Color3.new(1, 1, 1)
+Xray.TextXAlignment = Enum.TextXAlignment.Left
+
+Select_10.Name = "Select"
+Select_10.Parent = Xray
+Select_10.BackgroundColor3 = Color3.new(0.439216, 0.439216, 0.439216)
+Select_10.BorderSizePixel = 0
+Select_10.Position = UDim2.new(0, 160, 0, 0)
+Select_10.Size = UDim2.new(0, 40, 0, 20)
+Select_10.Font = Enum.Font.SourceSans
+Select_10.FontSize = Enum.FontSize.Size14
+Select_10.Text = "Add"
+Select_10.TextColor3 = Color3.new(0, 0, 0)
+
 Dark_7.Name = "Dark"
 Dark_7.Parent = background_2
 Dark_7.Active = true
@@ -791,6 +892,140 @@ Exit_2.BackgroundTransparency = 1
 Exit_2.Size = UDim2.new(0, 20, 0, 20)
 Exit_2.ZIndex = 4
 Exit_2.Image = "rbxassetid://2132544126"
+
+SpawnCEditor.Name = randomString()
+SpawnCEditor.Parent = PARENT
+SpawnCEditor.Active = true
+SpawnCEditor.BackgroundColor3 = Color3.new(1, 1, 1)
+SpawnCEditor.BackgroundTransparency = 1
+SpawnCEditor.Position = UDim2.new(0.5, -180, 0, -400)
+SpawnCEditor.Size = UDim2.new(0, 360, 0, 20)
+SpawnCEditor.ZIndex = 4
+
+background_4.Name = "background"
+background_4.Parent = SpawnCEditor
+background_4.BackgroundColor3 = Color3.new(0.121569, 0.121569, 0.121569)
+background_4.BorderSizePixel = 0
+background_4.Position = UDim2.new(0, 0, 0, 20)
+background_4.Size = UDim2.new(0, 360, 0, 75)
+
+Cmdbar_3.Name = "Cmdbar"
+Cmdbar_3.Parent = background_4
+Cmdbar_3.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
+Cmdbar_3.BackgroundTransparency = 0.5
+Cmdbar_3.BorderSizePixel = 0
+Cmdbar_3.Position = UDim2.new(0, 150, 0, 45)
+Cmdbar_3.Size = UDim2.new(0, 150, 0, 20)
+Cmdbar_3.Font = Enum.Font.SourceSans
+Cmdbar_3.FontSize = Enum.FontSize.Size18
+Cmdbar_3.Text = "Command"
+Cmdbar_3.TextColor3 = Color3.new(1, 1, 1)
+Cmdbar_3.TextScaled = true
+Cmdbar_3.TextStrokeTransparency = 0
+Cmdbar_3.TextWrapped = true
+
+Dark_10.Name = "Dark"
+Dark_10.Parent = background_4
+Dark_10.Active = true
+Dark_10.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
+Dark_10.BackgroundTransparency = 0.5
+Dark_10.BorderSizePixel = 0
+Dark_10.Size = UDim2.new(0, 360, 0, 5)
+
+Add_5.Name = "Add"
+Add_5.Parent = background_4
+Add_5.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
+Add_5.BackgroundTransparency = 0.5
+Add_5.BorderSizePixel = 0
+Add_5.Position = UDim2.new(0, 310, 0, 45)
+Add_5.Size = UDim2.new(0, 40, 0, 20)
+Add_5.Font = Enum.Font.SourceSans
+Add_5.FontSize = Enum.FontSize.Size18
+Add_5.Text = "Add"
+Add_5.TextColor3 = Color3.new(1, 1, 1)
+Add_5.TextStrokeTransparency = 0
+
+DelayNum.Name = "DelayNum"
+DelayNum.Parent = background_4
+DelayNum.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
+DelayNum.BackgroundTransparency = 0.5
+DelayNum.BorderSizePixel = 0
+DelayNum.Position = UDim2.new(0, 310, 0, 15)
+DelayNum.Size = UDim2.new(0, 40, 0, 20)
+DelayNum.Font = Enum.Font.SourceSans
+DelayNum.FontSize = Enum.FontSize.Size18
+DelayNum.Text = "0"
+DelayNum.TextColor3 = Color3.new(1, 1, 1)
+DelayNum.TextScaled = true
+DelayNum.TextStrokeTransparency = 0
+DelayNum.TextWrapped = true
+
+Delay.Name = "Delay"
+Delay.Parent = background_4
+Delay.BackgroundColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Delay.BackgroundTransparency = 1
+Delay.BorderSizePixel = 0
+Delay.Position = UDim2.new(0, 150, 0, 15)
+Delay.Size = UDim2.new(0, 150, 0, 20)
+Delay.Font = Enum.Font.SourceSansBold
+Delay.FontSize = Enum.FontSize.Size14
+Delay.Text = "Delay (seconds) (0 for none)"
+Delay.TextColor3 = Color3.new(0.972549, 0.972549, 0.972549)
+Delay.TextStrokeTransparency = 0
+Delay.TextWrapped = true
+
+Directions_3.Name = "Directions"
+Directions_3.Parent = background_4
+Directions_3.BackgroundColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Directions_3.BackgroundTransparency = 1
+Directions_3.BorderSizePixel = 0
+Directions_3.Position = UDim2.new(0, 20, 0, 10)
+Directions_3.Size = UDim2.new(0, 98, 0, 60)
+Directions_3.Font = Enum.Font.SourceSansBold
+Directions_3.FontSize = Enum.FontSize.Size14
+Directions_3.Text = "Spawn commands automatically get executed when you spawn."
+Directions_3.TextColor3 = Color3.new(0.972549, 0.972549, 0.972549)
+Directions_3.TextStrokeTransparency = 0
+Directions_3.TextWrapped = true
+Directions_3.TextYAlignment = Enum.TextYAlignment.Top
+
+Dark_11.Name = "Dark"
+Dark_11.Parent = background_4
+Dark_11.Active = true
+Dark_11.BackgroundColor3 = Color3.new(0.364706, 0.364706, 0.364706)
+Dark_11.BackgroundTransparency = 0.5
+Dark_11.BorderSizePixel = 0
+Dark_11.Position = UDim2.new(0.377777785, 0, 0.0666666701, 0)
+Dark_11.Size = UDim2.new(0, 5, 0, 70)
+
+shadow_4.Name = "shadow"
+shadow_4.Parent = SpawnCEditor
+shadow_4.BackgroundColor3 = Color3.new(0.121569, 0.121569, 0.121569)
+shadow_4.BorderColor3 = Color3.new(0, 0, 0)
+shadow_4.BorderSizePixel = 0
+shadow_4.Size = UDim2.new(0, 360, 0, 20)
+shadow_4.ZIndex = 4
+
+PopupText_4.Name = "PopupText"
+PopupText_4.Parent = shadow_4
+PopupText_4.BackgroundTransparency = 1
+PopupText_4.Position = UDim2.new(0, 51, 0, 0)
+PopupText_4.Size = UDim2.new(0.760355055, -16, 0.949999988, 0)
+PopupText_4.ZIndex = 4
+PopupText_4.Font = Enum.Font.SourceSans
+PopupText_4.TextSize = 20
+PopupText_4.Text = "Set Spawn Commands"
+PopupText_4.TextColor3 = Color3.new(1, 1, 1)
+PopupText_4.TextStrokeTransparency = 0
+PopupText_4.TextWrapped = true
+
+Exit_4.Name = "Exit"
+Exit_4.Parent = shadow_4
+Exit_4.BackgroundColor3 = Color3.new(1, 1, 1)
+Exit_4.BackgroundTransparency = 1
+Exit_4.Size = UDim2.new(0, 20, 0, 20)
+Exit_4.ZIndex = 4
+Exit_4.Image = "rbxassetid://2132544126"
 
 PositionsFrame.Name = "PositionsFrame"
 PositionsFrame.Parent = Settings
@@ -1264,6 +1499,48 @@ Toggle.FontSize = Enum.FontSize.Size14
 Toggle.Text = "Disabled"
 Toggle.TextColor3 = Color3.new(0, 0, 0)
 
+AliasHint.Name = "AliasHint"
+AliasHint.Parent = AliasesFrame
+AliasHint.BackgroundColor3 = Color3.new(1, 1, 1)
+AliasHint.BackgroundTransparency = 1
+AliasHint.BorderSizePixel = 0
+AliasHint.Position = UDim2.new(0, 25, 0, 40)
+AliasHint.Size = UDim2.new(0, 200, 0, 50)
+AliasHint.Font = Enum.Font.SourceSansItalic
+AliasHint.TextSize = 16
+AliasHint.Text = "Add aliases by using the 'addalias' command"
+AliasHint.TextColor3 = Color3.new(1, 1, 1)
+AliasHint.TextStrokeColor3 = Color3.new(1, 1, 1)
+AliasHint.TextWrapped = true
+
+PluginsHint.Name = "PluginsHint"
+PluginsHint.Parent = PluginsFrame
+PluginsHint.BackgroundColor3 = Color3.new(1, 1, 1)
+PluginsHint.BackgroundTransparency = 1
+PluginsHint.BorderSizePixel = 0
+PluginsHint.Position = UDim2.new(0, 25, 0, 40)
+PluginsHint.Size = UDim2.new(0, 200, 0, 50)
+PluginsHint.Font = Enum.Font.SourceSansItalic
+PluginsHint.TextSize = 16
+PluginsHint.Text = "Download plugins from the IY Discord (discord.io/infiniteyield)"
+PluginsHint.TextColor3 = Color3.new(1, 1, 1)
+PluginsHint.TextStrokeColor3 = Color3.new(1, 1, 1)
+PluginsHint.TextWrapped = true
+
+PositionsHint.Name = "PositionsHint"
+PositionsHint.Parent = PositionsFrame
+PositionsHint.BackgroundColor3 = Color3.new(1, 1, 1)
+PositionsHint.BackgroundTransparency = 1
+PositionsHint.BorderSizePixel = 0
+PositionsHint.Position = UDim2.new(0, 25, 0, 40)
+PositionsHint.Size = UDim2.new(0, 200, 0, 50)
+PositionsHint.Font = Enum.Font.SourceSansItalic
+PositionsHint.TextSize = 16
+PositionsHint.Text = "Use the 'spos' or 'setwaypoint' command to add a position"
+PositionsHint.TextColor3 = Color3.new(1, 1, 1)
+PositionsHint.TextStrokeColor3 = Color3.new(1, 1, 1)
+PositionsHint.TextWrapped = true
+
 function writefileExploit()
 	if writefile then
 		return true
@@ -1292,6 +1569,7 @@ defaultsettings = {
 	logsEnabled = false;
 	aliases = {};
 	binds = {};
+	spawnCmds = {};
 	WayPoints = {};
 	PluginsTable = {}
 }
@@ -1310,6 +1588,7 @@ function saves()
 				if json.logsEnabled ~= nil then logsEnabled = json.logsEnabled else logsEnabled = false end
 				if json.aliases ~= nil then aliases = json.aliases else aliases = {} end
 				if json.binds ~= nil then binds = json.binds else binds = {} end
+				if json.spawnCmds ~= nil then spawnCmds = json.spawnCmds else spawnCmds = {} end
 				if json.WayPoints ~= nil then WayPoints = json.WayPoints else WayPoints = {} end
 				if json.PluginsTable ~= nil then PluginsTable = json.PluginsTable else PluginsTable = {} end
 			else
@@ -1329,6 +1608,7 @@ function saves()
 				logsEnabled = false
 				aliases = {}
 				binds = {}
+				spawnCmds = {}
 				WayPoints = {}
 				PluginsTable = {}
 				
@@ -1395,7 +1675,7 @@ function saves()
 				PopupText.Size = UDim2.new(0.760355055, -16, 0.949999988, 0)
 				PopupText.ZIndex = 4
 				PopupText.Font = Enum.Font.SourceSans
-				PopupText.FontSize = Enum.FontSize.Size24
+				PopupText.TextSize = 20
 				PopupText.Text = "File Error"
 				PopupText.TextColor3 = Color3.new(1, 1, 1)
 				PopupText.TextStrokeTransparency = 0
@@ -1420,6 +1700,7 @@ function saves()
 		logsEnabled = false
 		aliases = {}
 		binds = {}
+		spawnCmds = {}
 		WayPoints = {}
 		PluginsTable = {}
 	end
@@ -1435,6 +1716,7 @@ function updatesaves()
 		logsEnabled = logsEnabled;
 		aliases = aliases;
 		binds = binds;
+		spawnCmds = spawnCmds;
 		WayPoints = WayPoints;
 		PluginsTable = PluginsTable
 		}
@@ -1471,30 +1753,27 @@ else
 	Toggle.Text = 'Disabled'
 end
 
-holderOffset = -250
-notifyOffset = -500
-
 function maximizeHolder()
 	if StayOpen == false then
-		Holder:TweenPosition(UDim2.new(1, holderOffset, 1, -220), "InOut", "Quart", 0.2, true, nil)
+		Holder:TweenPosition(UDim2.new(1, Holder.Position.X.Offset, 1, -220), "InOut", "Quart", 0.2, true, nil)
 	end
 end
 
 function minimizeHolder()
 	if StayOpen == false then
-		Holder:TweenPosition(UDim2.new(1, holderOffset, 1, -20), "InOut", "Quart", 0.5, true, nil)
+		Holder:TweenPosition(UDim2.new(1, Holder.Position.X.Offset, 1, -20), "InOut", "Quart", 0.5, true, nil)
 	end
 end
 
 function cmdbarHolder()
 	if StayOpen == false then
-		Holder:TweenPosition(UDim2.new(1, holderOffset, 1, -45), "InOut", "Quart", 0.5, true, nil)
+		Holder:TweenPosition(UDim2.new(1, Holder.Position.X.Offset, 1, -45), "InOut", "Quart", 0.5, true, nil)
 	end
 end
 
 function enablebuttons()
 	Settings.Aliases.Select.Visible = true
-	Settings.Color.Select.Visible = true
+	Settings.SpawnC.Select.Visible = true
 	Settings.Keybinds.Select.Visible = true
 	Settings.StayOpen.Button.On.Visible = true
 	Settings.Prefix.PrefixBox.Visible = true
@@ -1504,7 +1783,7 @@ end
 
 function disablebuttons()
 	Settings.Aliases.Select.Visible = false
-	Settings.Color.Select.Visible = false
+	Settings.SpawnC.Select.Visible = false
 	Settings.Keybinds.Select.Visible = false
 	Settings.StayOpen.Button.On.Visible = false
 	Settings.Prefix.PrefixBox.Visible = false
@@ -1517,7 +1796,7 @@ function notify(text,text2)
 	spawn(function()
 		local LnotifyCount = notifyCount+1
 		notifyCount = notifyCount+1
-		Notification:TweenPosition(UDim2.new(1, notifyOffset, 1, -0), "InOut", "Quart", 0.5, true, nil)
+		Notification:TweenPosition(UDim2.new(1, Notification.Position.X.Offset, 1, -0), "InOut", "Quart", 0.5, true, nil)
 		wait(0.6)
 		local closepressed = false
 		if text2 then
@@ -1527,15 +1806,15 @@ function notify(text,text2)
 			Notification.Title.Text = 'Notification'
 			Notification.Text.Text = text
 		end
-		Notification:TweenPosition(UDim2.new(1, notifyOffset, 1, -100), "InOut", "Quart", 0.5, true, nil)
+		Notification:TweenPosition(UDim2.new(1, Notification.Position.X.Offset, 1, -100), "InOut", "Quart", 0.5, true, nil)
 		Notification.CloseButton.MouseButton1Click:Connect(function()
-			Notification:TweenPosition(UDim2.new(1, notifyOffset, 1, -0), "InOut", "Quart", 0.5, true, nil)
+			Notification:TweenPosition(UDim2.new(1, Notification.Position.X.Offset, 1, -0), "InOut", "Quart", 0.5, true, nil)
 			closepressed = true
 		end)
 		wait(10)
 		if LnotifyCount == notifyCount then
 			if closepressed == false then
-				Notification:TweenPosition(UDim2.new(1, notifyOffset, 1, -0), "InOut", "Quart", 0.5, true, nil)
+				Notification:TweenPosition(UDim2.new(1, Notification.Position.X.Offset, 1, -0), "InOut", "Quart", 0.5, true, nil)
 			end
 			notifyCount = 0
 		end
@@ -1592,10 +1871,6 @@ IYMouse.KeyDown:connect(function(Key)
 	if (Key==prefix) then
 		Holder.Cmdbar:CaptureFocus()
 		maximizeHolder()
-		if SettingsOpen == true then
-			wait(0.2)
-			Holder.Settings:TweenPosition(UDim2.new(0, 0, 0, 220), "InOut", "Quart", 0.2, true, nil)
-		end
 	end
 end)
 
@@ -1691,11 +1966,40 @@ shadow.Hide.MouseButton1Down:connect(function()
 	end
 end)
 
-Holder.Settings.Color.Select.MouseButton1Click:Connect(function()
-	notify('UI Color','Not done yet :(')
+
+
+SpawnC.Select.MouseButton1Click:Connect(function()
+	SpawnCFrame:TweenPosition(UDim2.new(0, 0, 0, 0), "InOut", "Quart", 0.5, true, nil)
+	wait(0.5)
+	disablebuttons()
 end)
 
-Holder.Settings.Keybinds.Select.MouseButton1Click:Connect(function()
+SpawnCFrame.Close.MouseButton1Click:Connect(function()
+	enablebuttons()
+	SpawnCFrame:TweenPosition(UDim2.new(0, 0, 0, 175), "InOut", "Quart", 0.5, true, nil)
+end)
+
+SpawnCFrame.Delete.MouseButton1Click:Connect(function()
+	spawnCmds = {}
+	updatesaves()
+	refreshSpawnC()
+	notify('Spawn Commands Updated','Cleared all spawn commands')
+end)
+
+Add_5.MouseButton1Click:Connect(function()
+	if Cmdbar_3.Text ~= '' and Cmdbar_3.Text ~= 'Command' then
+		if isNumber(DelayNum.Text) then
+		addspawn(Cmdbar_3.Text,tonumber(DelayNum.Text))
+		refreshSpawnC()
+		updatesaves()
+		notify('Spawn Commands Updated','"'..Cmdbar_3.Text..'" will run when your player spawns')
+		else
+			notify('Spawn Command Error','Command delay must be a number')
+		end
+	end
+end)
+
+Keybinds.Select.MouseButton1Click:Connect(function()
 	KeybindsFrame:TweenPosition(UDim2.new(0, 0, 0, 0), "InOut", "Quart", 0.5, true, nil)
 	wait(0.5)
 	disablebuttons()
@@ -1745,6 +2049,16 @@ Settings.Positions.Select.MouseButton1Click:Connect(function()
 	disablebuttons()
 end)
 
+SpawnCFrame.Add.MouseButton1Click:Connect(function()
+	SpawnCEditor:TweenPosition(UDim2.new(0.5, -180, 0, 295), "InOut", "Quart", 0.5, true, nil)
+end)
+
+Exit_4.MouseButton1Click:Connect(function()
+	SpawnCEditor:TweenPosition(UDim2.new(0.5, -180, 0, -400), "InOut", "Quart", 0.5, true, nil)
+	Cmdbar_3.Text = 'Command'
+	DelayNum.Text = '0'
+end)
+
 local cmds={}
 local customAlias = {}
 AliasesFrame.Delete.MouseButton1Click:Connect(function()
@@ -1761,6 +2075,60 @@ Holder.Settings.Prefix.PrefixBox.Changed:connect(function(property)
 		updatesaves()
 	end
 end)
+
+DexNOffset = -500
+DexOffset = -250
+
+function dragMain(gui)
+spawn(function()
+local dragging
+local dragInput
+local dragStart
+local startPos
+local function update(input)
+	local pos = -250
+    local delta = input.Position - dragStart
+	if startPos.X.Offset + delta.X <= DexNOffset then
+		Notification:TweenPosition(UDim2.new(1, -250, Notification.Position.Y.Scale, Notification.Position.Y.Offset), "InOut", "Quart", 0.04, true, nil)
+		pos = 250
+	else
+		Notification:TweenPosition(UDim2.new(1, DexNOffset, Notification.Position.Y.Scale, Notification.Position.Y.Offset), "InOut", "Quart", 0.04, true, nil)
+		pos = -250
+	end
+	if startPos.X.Offset + delta.X <= DexOffset then
+		gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, gui.Position.Y.Scale, gui.Position.Y.Offset), "InOut", "Quart", 0.04, true, nil)
+		Notification:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X + pos, Notification.Position.Y.Scale, Notification.Position.Y.Offset), "InOut", "Quart", 0.04, true, nil)
+	else
+		gui:TweenPosition(UDim2.new(1, DexOffset, gui.Position.Y.Scale, gui.Position.Y.Offset), "InOut", "Quart", 0.04, true, nil)
+	end
+end
+gui.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = gui.Position
+        
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+gui.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        update(input)
+    end
+end)
+end)
+end
+
+dragMain(Holder)
 
 function dragGUI(gui)
 spawn(function()
@@ -1801,6 +2169,7 @@ end
 dragGUI(logsDrag)
 dragGUI(KeybindEditor)
 dragGUI(PluginEditor)
+dragGUI(SpawnCEditor)
 
 local CSP = Holder
 local frame = CSP:WaitForChild('CMDs')
@@ -1856,52 +2225,46 @@ IndexContents = function(str,bool,cmdbar,anim)
 end
 
 PlayerGui = Players.LocalPlayer:FindFirstChildOfClass("PlayerGui")
-function chatSuggestions()
-	if PlayerGui:FindFirstChild("Chat") and PlayerGui.Chat:FindFirstChild("Frame") and PlayerGui.Chat.Frame:FindFirstChild("ChatBarParentFrame") and
-		PlayerGui.Chat.Frame.ChatBarParentFrame:FindFirstChild("Frame") and PlayerGui.Chat.Frame.ChatBarParentFrame.Frame:FindFirstChild("BoxFrame") then
-		local chatbox = PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar
-		
-		chatbox.Changed:connect(function(property)
-			if property == "Text" then
-				if chatbox.Text:lower():sub(1,1) == prefix then
-					if SettingsOpen == true then
-						wait(0.2)
-						Holder.Settings:TweenPosition(UDim2.new(0, 0, 0, 220), "InOut", "Quart", 0.2, true, nil)
-					end
-					IndexContents(PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar.Text:lower():sub(2),true) 
-				else
-					minimizeHolder()
-					if SettingsOpen == true then
-						Settings:TweenPosition(UDim2.new(0, 0, 0, 45), "InOut", "Quart", 0.2, true, nil)
-					end
-				end
+local chatbox
+if pcall(function() chatbox = Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar end) then	
+	local function Index()
+		if chatbox.Text:lower():sub(1,1) == prefix then
+			if SettingsOpen == true then
+				wait(0.2)
+				Holder.Settings:TweenPosition(UDim2.new(0, 0, 0, 220), "InOut", "Quart", 0.2, true, nil)
 			end
-		end)
-
-		chatbox.FocusLost:connect(function(enterpressed)
-			if not enterpressed or chatbox.Text:lower():sub(1,1) ~= prefix then
-				IndexContents('',true)
-				if canvasPos ~= nil then
-					CMDsF.CanvasPosition = Vector2.new(0, canvasPos)
-					canvasTop = false
-				end
-			end
+			IndexContents(PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar.Text:lower():sub(2),true)
+		else
 			minimizeHolder()
-		end)
-		
-		PlayerGui.Chat.Frame.ChatBarParentFrame.ChildAdded:Connect(function(newbar)
-			wait()
-			if newbar:FindFirstChild('BoxFrame') then
-				chatSuggestions()
+			if SettingsOpen == true then
+				wait(0.2)
+				Settings:TweenPosition(UDim2.new(0, 0, 0, 45), "InOut", "Quart", 0.2, true, nil)
 			end
-		end)
-		
-	else
-		notify('Suggestions','Custom chat detected. Will not provide suggestions for commands typed in the chat.')
+		end
 	end
+	chatbox:GetPropertyChangedSignal("Text"):Connect(Index)
+			
+	chatbox.FocusLost:connect(function(enterpressed)
+		if not enterpressed or chatbox.Text:lower():sub(1,1) ~= prefix then
+			IndexContents('',true)
+			if canvasPos ~= nil then
+				CMDsF.CanvasPosition = Vector2.new(0, canvasPos)
+				canvasTop = false
+			end
+		end
+		minimizeHolder()
+	end)
+	
+	Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.ChildAdded:Connect(function(newbar)
+		wait()
+		if newbar:FindFirstChild('BoxFrame') then
+			chatbox = Players.LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar
+			chatbox:GetPropertyChangedSignal("Text"):Connect(Index)
+		end
+	end)
+else
+	print('Custom chat detected. Will not provide suggestions for commands typed in the chat.')
 end
-
-chatSuggestions()
 
 local CMDs = {}
 CMDs[#CMDs + 1] = {NAME = 'rejoin / rj', DESC = 'Makes you rejoin the game'}
@@ -1933,6 +2296,7 @@ CMDs[#CMDs + 1] = {NAME = 'spam [text]', DESC = 'Makes you spam the chat'}
 CMDs[#CMDs + 1] = {NAME = 'unspam', DESC = 'Turns off spam'}
 CMDs[#CMDs + 1] = {NAME = 'pmspam [plr] [text]', DESC = 'Makes you spam a players whispers'}
 CMDs[#CMDs + 1] = {NAME = 'unpmspam [plr]', DESC = 'Turns off pm spam'}
+CMDs[#CMDs + 1] = {NAME = 'spamspeed [num]', DESC = 'How quickly you spam (default is 1)'}
 CMDs[#CMDs + 1] = {NAME = '', DESC = ''}
 CMDs[#CMDs + 1] = {NAME = 'esp', DESC = 'View all players and their status'}
 CMDs[#CMDs + 1] = {NAME = 'noesp / unesp', DESC = 'Removes esp'}
@@ -1940,6 +2304,9 @@ CMDs[#CMDs + 1] = {NAME = 'chams', DESC = 'ESP but without text in the way'}
 CMDs[#CMDs + 1] = {NAME = 'nochams / unchams', DESC = 'Removes chams'}
 CMDs[#CMDs + 1] = {NAME = 'locate [plr]', DESC = 'View a single player and their status'}
 CMDs[#CMDs + 1] = {NAME = 'unlocate / nolocate [plr]', DESC = 'Removes locate'}
+CMDs[#CMDs + 1] = {NAME = 'xray', DESC = 'Makes all parts in workspace transparent'}
+CMDs[#CMDs + 1] = {NAME = 'unxray / noxray', DESC = 'Restores transparency'}
+CMDs[#CMDs + 1] = {NAME = '', DESC = ''}
 CMDs[#CMDs + 1] = {NAME = 'spectate / view [plr]', DESC = 'View a player'}
 CMDs[#CMDs + 1] = {NAME = 'unspectate / unview', DESC = 'Stops viewing player'}
 CMDs[#CMDs + 1] = {NAME = 'freecam / fc', DESC = 'Allows you to freely move camera around the game'}
@@ -1971,7 +2338,7 @@ CMDs[#CMDs + 1] = {NAME = 'os [plr]', DESC = "Shows a player's platform"}
 CMDs[#CMDs + 1] = {NAME = 'bang [plr]', DESC = 'owo'}
 CMDs[#CMDs + 1] = {NAME = 'unbang [plr]', DESC = 'uwu'}
 CMDs[#CMDs + 1] = {NAME = 'headsit [plr]', DESC = 'Sit on a players head'}
-CMDs[#CMDs + 1] = {NAME = 'kill [plr] (TOOL)', DESC = 'Kills a player (YOU NEED A TOOL)'}
+CMDs[#CMDs + 1] = {NAME = 'kill [plr]', DESC = 'Kills a player'}
 CMDs[#CMDs + 1] = {NAME = 'bring [plr] (TOOL)', DESC = 'Brings a player (YOU NEED A TOOL)'}
 CMDs[#CMDs + 1] = {NAME = 'fling', DESC = 'Flings anyone you touch'}
 CMDs[#CMDs + 1] = {NAME = 'unfling', DESC = 'Disables the fling command'}
@@ -2102,12 +2469,24 @@ local oldCframe
 local currentTool
 
 Players.LocalPlayer.CharacterAdded:Connect(function()
+	FLYING = false
+	Floating = false
+	bangplr = nil
+	execCmd('clip')
+	
+	if #spawnCmds > 0 then
+		for i,v in pairs(spawnCmds)do
+			spawn(function()
+				wait(v.DELAY)
+				execCmd(v.COMMAND,Players.LocalPlayer)
+			end)
+		end
+	end
+	
 	wait(0.3)
 	if spawnpoint and not godded and spawnpos ~= nil then
 		Players.LocalPlayer.Character.HumanoidRootPart.CFrame = spawnpos
 	end
-	bangplr = nil
-	execCmd('clip')
 	if godded then
 		repeat wait() until Players.LocalPlayer.Character ~= nil and Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart') and Players.LocalPlayer.Character:FindFirstChild('Humanoid')
 		Players.LocalPlayer.Character.Humanoid:SetStateEnabled(15,false)
@@ -2236,6 +2615,14 @@ function addbind(cmd,key)
 	{
 		COMMAND=cmd;
 		KEY=key;
+	}
+end
+
+function addspawn(cmd,sDelay)
+	spawnCmds[#spawnCmds+1]=
+	{
+		COMMAND=cmd;
+		DELAY=sDelay;
 	}
 end
 
@@ -2514,6 +2901,7 @@ Holder.Cmdbar.FocusLost:connect(function(enterpressed)
 		canvasTop = false
 	end
 	if SettingsOpen == true then
+		wait(0.2)
 		Settings:TweenPosition(UDim2.new(0, 0, 0, 45), "InOut", "Quart", 0.2, true, nil)
 	end
 end)
@@ -2530,6 +2918,10 @@ UserInputService.InputBegan:Connect(function(input)
         if historyCount < 1 then historyCount = 1 end
         Holder.Cmdbar.Text = cmdHistory[historyCount] or ""
     end
+	if SettingsOpen == true then
+		wait(0.2)
+		Holder.Settings:TweenPosition(UDim2.new(0, 0, 0, 220), "InOut", "Quart", 0.2, true, nil)
+	end
 end)
 
 ESPenabled = false
@@ -2761,6 +3153,9 @@ PositionsFrame.Delete.MouseButton1Click:Connect(function()
 end)
 
 function refreshwaypoints()
+	if #WayPoints > 0 then
+		PositionsHint:Destroy()
+	end
 	if Holder_4 then
 		Holder_4:ClearAllChildren()
 		Holder_4.CanvasSize = UDim2.new(0, 0, 0, 10)
@@ -2785,7 +3180,48 @@ end
 
 refreshwaypoints()
 
+function removeSpawnC(cmd,Delay)
+	for i = #spawnCmds,1,-1 do
+		if spawnCmds[i].COMMAND == cmd and spawnCmds[i].DELAY == Delay then
+			table.remove(spawnCmds, i)
+		end
+	end
+	refreshSpawnC()
+	updatesaves()
+	notify('Spawn Commands Updated','Removed "'..cmd..'" from spawn commands')
+end
+
+function refreshSpawnC()
+	if Holder_6 then
+		Holder_6:ClearAllChildren()
+		Holder_6.CanvasSize = UDim2.new(0, 0, 0, 10)
+		for i = 1, #spawnCmds do
+			local YSize = 25
+			local Position = ((i * YSize) - YSize)
+			local newpoint = Example_2:Clone()
+			newpoint.Parent = Holder_6
+			newpoint.Visible = true
+			newpoint.Position = UDim2.new(0,0,0, Position + 5)
+			if spawnCmds[i].DELAY == 0 or spawnCmds[i].DELAY == '0' then
+				newpoint.Text.Text = spawnCmds[i].COMMAND
+			else
+				newpoint.Text.Text = spawnCmds[i].COMMAND..' (Delay '..spawnCmds[i].DELAY..')'
+			end
+			Holder_6.CanvasSize = UDim2.new(0,0,0, Position + 30)
+			newpoint.Text.Delete.MouseButton1Click:Connect(function()
+				removeSpawnC(spawnCmds[i].COMMAND,spawnCmds[i].DELAY)
+				refreshSpawnC()
+			end)
+		end
+	end
+end
+
+refreshSpawnC()
+
 function refreshaliases()
+	if #aliases > 0 then
+		AliasHint:Destroy()
+	end
 	if Holder_3 then
 		Holder_3:ClearAllChildren()
 		Holder_3.CanvasSize = UDim2.new(0, 0, 0, 10)
@@ -2914,6 +3350,32 @@ Float.Select.MouseButton1Click:Connect(function()
 	end
 end)
 
+ClickTP.Select.MouseButton1Click:Connect(function()
+	if keySelected then
+		addbind('clicktp',keyPressed)
+		refreshbinds()
+		updatesaves()
+		if keyPressed == 'RightClick' or keyPressed == 'LeftClick' then
+			notify('Keybinds Updated','Binded '..keyPressed..' to click tp')
+		else
+			notify('Keybinds Updated','Binded '..keyPressed:sub(14)..' to click tp')
+		end
+	end
+end)
+
+Xray.Select.MouseButton1Click:Connect(function()
+	if keySelected then
+		addbind('togglexray',keyPressed)
+		refreshbinds()
+		updatesaves()
+		if keyPressed == 'RightClick' or keyPressed == 'LeftClick' then
+			notify('Keybinds Updated','Binded '..keyPressed..' to toggle xray')
+		else
+			notify('Keybinds Updated','Binded '..keyPressed:sub(14)..' to toggle xray')
+		end
+	end
+end)
+
 IYMouse.Button1Down:connect(function()
 	for i,v in pairs(binds) do
 		if v.COMMAND == 'clicktp' then
@@ -2929,22 +3391,12 @@ IYMouse.Button1Down:connect(function()
 	end
 end)
 
-ClickTP.Select.MouseButton1Click:Connect(function()
-	if keySelected then
-		addbind('clicktp',keyPressed)
-		refreshbinds()
-		updatesaves()
-		if keyPressed == 'RightClick' or keyPressed == 'LeftClick' then
-			notify('Keybinds Updated','Binded '..keyPressed..' to click tp')
-		else
-			notify('Keybinds Updated','Binded '..keyPressed:sub(14)..' to click tp')
-		end
-	end
-end)
-
 PluginsGUI = PluginEditor.background
 
 function refreshplugins()
+	if #PluginsTable > 0 then
+		PluginsHint:Destroy()
+	end
 	if Holder_5 then
 		Holder_5:ClearAllChildren()
 		Holder_5.CanvasSize = UDim2.new(0, 0, 0, 10)
@@ -3261,7 +3713,7 @@ function(args, speaker)
 	TextLabel.Size = UDim2.new(0, 100, 0, 20)
 	TextLabel.ZIndex = 10
 	TextLabel.Font = Enum.Font.SourceSansLight
-	TextLabel.FontSize = Enum.FontSize.Size24
+	TextLabel.TextSize = 20
 	TextLabel.Text = "Run Time:"
 	TextLabel.TextColor3 = Color3.new(1, 1, 1)
 	TextLabel.TextStrokeTransparency = 0
@@ -3276,7 +3728,7 @@ function(args, speaker)
 	TextLabel2.Size = UDim2.new(0, 100, 0, 20)
 	TextLabel2.ZIndex = 10
 	TextLabel2.Font = Enum.Font.SourceSansLight
-	TextLabel2.FontSize = Enum.FontSize.Size24
+	TextLabel2.TextSize = 20
 	TextLabel2.Text = "Statistics:"
 	TextLabel2.TextColor3 = Color3.new(1, 1, 1)
 	TextLabel2.TextXAlignment = Enum.TextXAlignment.Left
@@ -3291,7 +3743,7 @@ function(args, speaker)
 	TextLabel3.Size = UDim2.new(0, 100, 0, 20)
 	TextLabel3.ZIndex = 10
 	TextLabel3.Font = Enum.Font.SourceSansLight
-	TextLabel3.FontSize = Enum.FontSize.Size24
+	TextLabel3.TextSize = 20
 	TextLabel3.Text = "Local Player:"
 	TextLabel3.TextColor3 = Color3.new(1, 1, 1)
 	TextLabel3.TextXAlignment = Enum.TextXAlignment.Left
@@ -3548,12 +4000,6 @@ function NOFLY()
 	FLYING = false
 	Players.LocalPlayer.Character.Humanoid.PlatformStand = false
 end
-
-Players.LocalPlayer.CharacterAdded:Connect(function()
-	FLYING = false
-	Floating = false
-	execCmd('clip')
-end)
 
 addcmd('fly',{},
 function(args, speaker)
@@ -4100,92 +4546,36 @@ end)
 addcmd('kill',{'fekill'},
 function(args, speaker)
 	local players = getPlayer(args[1], speaker)
-	if tools(Players.LocalPlayer) then
-		for i,v in pairs(players)do
-			-- Full credit to CyclicaIIy @V3rmillion
-			local LocalPlayer = Players.LocalPlayer
-			local ran1 = false
-			local ran2 = false
-			local equipped = false
-			local savepos = LocalPlayer.Character.HumanoidRootPart.CFrame
-			local target = Players[v]
-			if #LocalPlayer.Backpack:GetChildren() < 2 then
-				repeat
-					for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
-						if tool:IsA("Tool") then
-							tool.Parent = LocalPlayer
-						end
-					end
-					LocalPlayer.Character:ClearAllChildren()
-					local char = Instance.new("Model", workspace)
-					char.Name = "character"
-					Instance.new("Part", char).Name = "Torso";
-					Instance.new("Part", char).Name = "Head";
-					Instance.new("Humanoid", char).Name = "Humanoid";
-					LocalPlayer.Character = char
-					repeat wait() until LocalPlayer.Character
-				until #LocalPlayer:GetChildren() - 4 >= 2
-				for _, char in pairs(workspace:GetChildren()) do
-					if char.Name == "character" and char:IsA("Model") then
-						char:Destroy()
-					end
-				end
-				repeat wait() until LocalPlayer.Character:FindFirstChild('HumanoidRootPart')
-				for _, tool in pairs(LocalPlayer:GetChildren()) do
-					if tool:IsA("Tool") then
-						tool.Parent = LocalPlayer.Backpack
-					end
-				end
-			end
-			LocalPlayer.Character.HumanoidRootPart.CFrame = savepos
-			LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = LocalPlayer.Character
-			LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = LocalPlayer.Character
-			local tool = LocalPlayer.Character:FindFirstChildOfClass("Tool")
-			tool.Parent = workspace
-			local attacher = LocalPlayer.Character:FindFirstChildOfClass("Tool")
-			attacher.Parent = workspace
-			LocalPlayer.Character.Humanoid:EquipTool(tool)
-			repeat wait() until LocalPlayer.Character:FindFirstChildOfClass("Tool") ~= nil
-			LocalPlayer.Character.Humanoid:UnequipTools()
-			attacher.AncestryChanged:connect(function()
-				if ran1 == false then
-					ran1 = true
-					equipped = true
-				end
-			end)
-			local anim = Instance.new("Animation")
-			anim.AnimationId = "rbxassetid://188632011"
-			local loadanim = LocalPlayer.Character.Humanoid:LoadAnimation(anim)
-			loadanim.Looped = true
-			loadanim:Play()
-			LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(math.random(-1000, 1000), math.random(0, 1000), math.random(-1000, 1000)))
-			local stabilize = Instance.new("Part", workspace)
-			stabilize.Size = Vector3.new(50, 1, 50)
-			stabilize.Anchored = true
-			stabilize.CFrame = CFrame.new(LocalPlayer.Character.HumanoidRootPart.CFrame * Vector3.new(0, -3.5, 0))
-			repeat
-				target.Character.HumanoidRootPart.CFrame = CFrame.new(LocalPlayer.Character.HumanoidRootPart.Position + LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 2 + LocalPlayer.Character.HumanoidRootPart.CFrame.rightVector * 2)
-				wait()
-			until equipped == true
-			stabilize:Destroy()
-			loadanim:Stop()
-			anim:Destroy()
-			LocalPlayer.CharacterAdded:connect(function(character)
-				if ran2 == false then
-					ran2 = true
-					character:WaitForChild("HumanoidRootPart")
-					character.HumanoidRootPart.CFrame = savepos
-				end
-			end)
-			tool.GripPos = Vector3.new(0, -math.huge, 0)
-			LocalPlayer.Character.Humanoid:EquipTool(tool)
-			repeat
-				LocalPlayer.Character.Humanoid.Jump = true
-				wait()
-			until ran2 == true
+	for i,v in pairs(players)do
+		-- Full credit to CyclicaIIy @V3rmillion Cyclically#4905 @Discord
+		local target = Players[v]
+		local torsoname = "Torso"
+		if Players.LocalPlayer.Character:FindFirstChild("Humanoid").RigType == Enum.HumanoidRigType.R15 then
+		    torsoname = "UpperTorso"
 		end
-	else
-		notify('Tool Required','You need to have a tool to use this command')
+		if target.Character ~= nil then
+		    local savepos =Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame
+		    Players.LocalPlayer.Character:FindFirstChild(torsoname).Anchored = true
+		    local tool = Instance.new("Tool", Players.LocalPlayer.Backpack)
+		    local hat = Players.LocalPlayer.Character:FindFirstChildOfClass("Accessory")
+		    local hathandle = hat.Handle
+		    hathandle.Parent = tool
+		    hathandle.Massless = true
+		    tool.GripPos = Vector3.new(0, 9e99, 0)
+		    tool.Parent = Players.LocalPlayer.Character
+		    repeat wait() until Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") ~= nil
+		    tool.Grip = CFrame.new(Vector3.new(0, 0, 0))
+		    Players.LocalPlayer.Character:FindFirstChild(torsoname).Anchored = false
+		    repeat
+		        Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = target.Character:FindFirstChild("HumanoidRootPart").CFrame
+		        wait()
+		    until target.Character == nil or target.Character:FindFirstChild("Humanoid").Health <= 0 or Players.LocalPlayer.Character == nil or Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health <= 0 or (target.Character:FindFirstChild("HumanoidRootPart").Velocity.magnitude - target.Character:FindFirstChild("Humanoid").WalkSpeed) > (target.Character:FindFirstChild("Humanoid").WalkSpeed + 20)
+		    Players.LocalPlayer.Character:FindFirstChild("Humanoid"):UnequipTools()
+		    hathandle.Parent = hat
+		    hathandle.Massless = false
+		    tool:Destroy()
+		   Players. LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = savepos
+		end
 	end
 end)
 
@@ -4600,7 +4990,11 @@ end)
 addcmd('speed',{'ws'},
 function(args, speaker)
 	if Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
-		Players.LocalPlayer.Character.Humanoid.WalkSpeed=tonumber(args[1])
+		if args[2] then
+			Players.LocalPlayer.Character.Humanoid.WalkSpeed=tonumber(args[2])
+		else
+			Players.LocalPlayer.Character.Humanoid.WalkSpeed=tonumber(args[1])
+		end
 	end
 end)
 
@@ -4677,18 +5071,22 @@ end)
 addcmd('explorer',{'dex'},
 function(args, speaker)
 	local dex = loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
-	game:GetService("CoreGui").Dex.PropertiesFrame.Changed:connect(function(property)
+	game:GetService("CoreGui").RobloxGui.Dex.PropertiesFrame.Changed:connect(function(property)
 		if property == 'Position' then
-			if game:GetService("CoreGui").Dex.PropertiesFrame.Position == UDim2.new(1, -300, 0.5, 36) then
-				Notification:TweenPosition(UDim2.new(1, -800, 1, Notification.Position.Y.Offset), "InOut", "Quart", 0.5, true, nil)
-				Holder:TweenPosition(UDim2.new(1, -550, 1, Holder.Position.Y.Offset), "InOut", "Quart", 0.2, true, nil)
-				holderOffset = -550
-				notifyOffset = -800
-			elseif game:GetService("CoreGui").Dex.PropertiesFrame.Position == UDim2.new(1, 30, 0.5, 36) then
-				Holder:TweenPosition(UDim2.new(1, -250, 1, Holder.Position.Y.Offset), "InOut", "Quart", 0.2, true, nil)
-				Notification:TweenPosition(UDim2.new(1, -500, 1, Notification.Position.Y.Offset), "InOut", "Quart", 0.5, true, nil)
-				holderOffset = -250
-				notifyOffset = -500
+			if game:GetService("CoreGui").RobloxGui.Dex.PropertiesFrame.Position == UDim2.new(1, -300, 0.5, 36) then
+				if Holder.Position.X.Offset > -550 or Notification.Position.X.Offset > -550 then
+					Holder:TweenPosition(UDim2.new(1, -550, 1, Holder.Position.Y.Offset), "InOut", "Quart", 0.2, true, nil)
+					Notification:TweenPosition(UDim2.new(1, -800, 1, Notification.Position.Y.Offset), "InOut", "Quart", 0.5, true, nil)
+				end
+				DexNOffset = -800
+				DexOffset = -550
+			elseif game:GetService("CoreGui").RobloxGui.Dex.PropertiesFrame.Position == UDim2.new(1, 30, 0.5, 36) then
+				if Holder.Position.X.Offset == -550 or Notification.Position.X.Offset == -800 then
+					Holder:TweenPosition(UDim2.new(1, -250, 1, Holder.Position.Y.Offset), "InOut", "Quart", 0.2, true, nil)
+					Notification:TweenPosition(UDim2.new(1, -500, 1, Notification.Position.Y.Offset), "InOut", "Quart", 0.5, true, nil)
+				end
+				DexNOffset = -500
+				DexOffset = -250
 			end
 		end
 	end)
@@ -4749,11 +5147,12 @@ function(args, speaker)
 end)
 
 spamming = false
+spamspeed = 1
 addcmd('spam',{},
 function(args, speaker)
 	spamming = true
 	local spamstring = getstring(1)
-	repeat wait(1)
+	repeat wait(spamspeed)
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(spamstring, "All")
 	until spamming == false
 end)
@@ -4772,7 +5171,7 @@ function(args, speaker)
 			if FindInTable(pmspamming, Players[v].Name) then return end
 			table.insert(pmspamming, Players[v].Name)
 			local pmspamstring = getstring(2)
-			repeat wait(1)
+			repeat wait(spamspeed)
 				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w "..Players[v].Name.." "..pmspamstring, "All")
 			until not FindInTable(pmspamming, Players[v].Name)
 		end)
@@ -4791,6 +5190,11 @@ function(args, speaker)
 			end
 		end)
 	end
+end)
+
+addcmd('spamspeed',{},
+function(args, speaker)
+	spamspeed = args[1]
 end)
 
 addcmd('blockhead',{},
@@ -4853,6 +5257,7 @@ function(args, speaker)
 			bangAnim.AnimationId = "rbxassetid://148840371"
 			bang = Players.LocalPlayer.Character.Humanoid:LoadAnimation(bangAnim)
 			bang:Play(.1, 1, 1)
+			bang:AdjustSpeed(3)
 			bangplr = Players[v].Name
 		end
 	else
@@ -5132,20 +5537,54 @@ end)
 
 addcmd('spin',{},
 function(args, speaker)
-	spinInstance = Instance.new("Animation")
-	spinInstance.AnimationId = "rbxassetid://188632011"
-	spinAnim = Players.LocalPlayer.Character.Humanoid:LoadAnimation(spinInstance)
-	spinAnim.Looped = true
-	spinAnim:Play()
-	if args[1] then
-		spinAnim:AdjustSpeed(args[1])
-	end
+	local Spin = Instance.new("BodyAngularVelocity", Players.LocalPlayer.Character.HumanoidRootPart)
+	Spin.Name = "Spinning"
+	Spin.MaxTorque = Vector3.new(0, math.huge, 0)
+	Spin.AngularVelocity = Vector3.new(0,20,0)
 end)
 
 addcmd('unspin',{},
 function(args, speaker)
-	spinInstance:Destroy()
-	spinAnim:Stop()
+	for i,v in pairs(Players.LocalPlayer.Character.HumanoidRootPart:GetChildren()) do
+		if v.Name == "Spinning" then
+			v:Destroy()
+		end
+	end
+end)
+
+transparent = false
+function x(v)
+	if v then
+		for _,i in pairs(workspace:GetDescendants()) do
+			if i:IsA("BasePart") and not i.Parent:FindFirstChild("Humanoid") and not i.Parent.Parent:FindFirstChild("Humanoid") then
+				i.LocalTransparencyModifier = 0.5
+			end
+		end
+	else
+		for _,i in pairs(workspace:GetDescendants()) do
+			if i:IsA("BasePart") and not i.Parent:FindFirstChild("Humanoid") and not i.Parent.Parent:FindFirstChild("Humanoid") then
+				i.LocalTransparencyModifier = 0
+			end
+		end
+	end
+end
+
+addcmd('xray',{},
+function(args, speaker)
+	transparent = true
+	x(transparent)
+end)
+
+addcmd('unxray',{'noxray'},
+function(args, speaker)
+	transparent = false
+	x(transparent)
+end)
+
+addcmd('togglexray',{},
+function(args, speaker)
+	transparent=not transparent
+	x(transparent)
 end)
 
 if PluginsTable ~= nil or PluginsTable ~= {} then
@@ -5217,7 +5656,7 @@ if pcall(function() loadstring(game:HttpGet(('https://pastebin.com/raw/yKieh77L'
 		PopupText.Size = UDim2.new(0.760355055, -16, 0.949999988, 0)
 		PopupText.ZIndex = 4
 		PopupText.Font = Enum.Font.SourceSans
-		PopupText.FontSize = Enum.FontSize.Size24
+		PopupText.TextSize = 20
 		PopupText.Text = "Server Announcement"
 		PopupText.TextColor3 = Color3.new(1, 1, 1)
 		PopupText.TextStrokeTransparency = 0
