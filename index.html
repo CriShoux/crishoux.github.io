@@ -164,7 +164,7 @@
 		<?php
 			if($_POST["name"])
 			{
-			echo "Welcome: ". $_POST['name']. "<br />";
+			echo 'Hello ' . htmlspecialchars($_POST["name"]) . '!';
 			}
 		?>
 	</body>
