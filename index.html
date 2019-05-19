@@ -161,5 +161,11 @@
 			element.innerHTML = phraseList[Math.floor(Math.random() * phraseList.length)];
 
 		</script>
+		<?php
+			if($_POST["name"])
+			{
+			echo "Welcome: ". $_POST['name']. "<br />";
+			}
+		?>
 	</body>
 </html>
