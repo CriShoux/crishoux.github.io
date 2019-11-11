@@ -555,3 +555,5 @@ function ShouxLib.Content:newDropdown(title, callback, list)
         end;
     end);
 end;
+
+return ShouxLib;
